@@ -20,7 +20,7 @@ var randomWord = function(gameWords) {
 // 1.2 - guess if the letter is correct 
 function isCorrectGuess(word, letter) {
     for (var i = 0; i < word.length; i++) {
-        if (word[i] === letter) {
+    if (word[i] === letter) {
         return true;     
         }
     }
@@ -40,8 +40,8 @@ var getBlanks = function(word) {
 var fillBlanks = function (word, guessWord, letter){
     if (isCorrectGuess(word, letter)) {
         for (var i = 0; i < word.length; i++) {
-            if (word[i] === letter) {
-                guessWord[i] = letter;
+        if (word[i] === letter) {
+            guessWord[i] = letter;
             }
         }
     } 
@@ -58,6 +58,7 @@ function setupRound (word){
     }
     return setup; 
 }
+
 // 1.6 - function to update the rounds 
 function updateRound (object, letter){
     if (isCorrectGuess(object.word, letter) === false){
@@ -70,9 +71,36 @@ function updateRound (object, letter){
      return object;
 }
 
+// 1.7 function for winning 
+function hasWon (puzzleState){
+    for (var i = 0; i < puzzleState.length; i++) {
+    if (puzzleState[i] === "_") {
+        return false;
+        } 
+    }
+        return true; 
+}
 
+// 1.8 function for loosing 
+function hasLost (guessesLeft){
+    if (guessesLeft === 0 ) {
+        return true;
+    } 
+        return false; 
+}
 
+// 1.9 check if round is over (really struggled on this one)
+function isEndOfRound (object){
+    if (object.guessesLeft === 0){
+        return true;
+    }
+    // i was returning false here 
+    if (hasWon(object.puzzleState)){
+       return true; 
+    }
+    return false;
 
+}
 
         
         
