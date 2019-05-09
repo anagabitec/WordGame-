@@ -107,10 +107,21 @@ function setupGame (wordsArr, numOfWins, numOfLooses){
         words : wordsArr,
         wins : numOfWins,
         losses : numOfLooses, 
-        round : setupRound(randomWord(gameWords)),
+        // parenteses drove me crazy.... 
+        round : setupRound(randomWord(wordsArr)),
     }
     return game; 
 }
+
+//1.11 start a new round
+function startNewRound (game){
+   
+    setUpRound = game[Math.floor(Math.random() * game.length)];
+    return game;
+
+}
+
+
         
         
 
