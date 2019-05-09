@@ -29,12 +29,28 @@ function isCorrectGuess(word, letter) {
 
 // blank 
 var getBlanks = function(word) {
-    var WordArr = [];
+    var blankArr = [];
     for (var i = 0; i < word.length; i++) {
-        WordArr[i] = "_";
+        blankArr[i] = "_";
     }
-    return WordArr; 
+    return blankArr; 
 }
+
+// var fillBlank
+var fillBlanks = function (word, guessWord, letter){
+    if (isCorrectGuess(word, letter)) {
+        for (var i = 0; i < word.length; i++) {
+            if (word[i] === letter) {
+                guessWord[i] = letter;
+            }
+        }
+    } 
+    return guessWord;
+}
+
+
+
+
 
         
         
