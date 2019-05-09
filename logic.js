@@ -99,9 +99,18 @@ function isEndOfRound (object){
        return true; 
     }
     return false;
-
 }
 
+// 1.10 set up number of wins ansd looses 
+function setupGame (wordsArr, numOfWins, numOfLooses){
+    var game = {
+        words : wordsArr,
+        wins : numOfWins,
+        losses : numOfLooses, 
+        round : setupRound(randomWord(gameWords)),
+    }
+    return game; 
+}
         
         
 
