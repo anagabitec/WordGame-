@@ -116,20 +116,28 @@ function setupGame (wordsArr, numOfWins, numOfLooses){
 //1.11 start a new round
 function startNewRound (game) {
     var puzzleState = game.round.puzzleState; 
+    
+
     if (hasWon(puzzleState === true)) {
        ++game.wins;
        
        alert ("You Won ,the Word is" + game.round.word + "sweet!"); 
        
     }
-    else {
+    else { 
        ++game.losses;
        alert("sorry" + game.round.word);
        
     }
     return game; 
-
+// cant figure this shit 
 }
+
+// 
+var myGame = setupGame(gameWords)
+    
+
+    
 
 
 
