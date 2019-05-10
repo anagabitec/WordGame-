@@ -1,4 +1,7 @@
-// 1.0 - variables
+// load the HTML page
+
+
+// 1.0 - variables - start javascript 
 
 var gameWords = [
     "basketball",
@@ -134,10 +137,10 @@ function startNewRound (game) {
 }
 
 // 
-var myGame = setupGame(gameWords)
+var myGame = setupGame(gameWords, 0, 0);
     
-
-    
+// HTML skeleton 
+var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
 
 
 
