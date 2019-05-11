@@ -138,10 +138,12 @@ function startNewRound (game) {
 
 // 
 var myGame = setupGame(gameWords, 0, 0);
-    
-// HTML skeleton 
-var puzzleState = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
 
+window.onload = function () {
+// HTML skeleton 
+var x = document.getElementById("puzzle-state").innerHTML = myGame.round.puzzleState.join(" ");
+        console.log(myGame);
+}
 
 
         
